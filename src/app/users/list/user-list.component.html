@@ -1,0 +1,26 @@
+<div class="container"  *ngIf="userList$ | async; let userList; else loading">
+  <div>
+    <h2 class="title">Users List</h2>
+    <nz-pagination [nzPageSize]="pageSize" (nzPageIndexChange)="pageIndexChange($event)" [nzPageIndex]="1"
+                   [nzTotal]="userList.length"
+                   nzSize="small"></nz-pagination>
+  </div>
+  <div class="list-wrapper">
+    <ng-container *ngFor="let user of  userList| slice:start:end; ">
+      <a [routerLink]="['/details', user.id]">
+        <nz-card [nzTitle]="user.title" nzHoverable [nzCover]="coverTemplate">
+          <nz-card-meta [nzDescription]="user.description"></nz-card-meta>
+        </nz-card>
+      </a>
+      <ng-template #coverTemplate>
+        <img alt="example" [src]="user.image"/>
+      </ng-template>
+
+    </ng-container>
+
+  </div>
+
+</div>
+<ng-template #loading>
+  Loading stuff...
+</ng-template>

@@ -1,0 +1,70 @@
+.back-btn button {
+  margin: 20px 20px 1px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding-top: 30px;
+
+  .large-img {
+    text-align: center;
+
+    img {
+      width: 82%;
+    }
+  }
+
+  .small-images-container {
+    padding: 20px;
+    padding-left: 14%;
+
+    img {
+      width: 17%;
+      margin: 10px;
+      transition: all 0.3s;
+      box-shadow: 5px 5px 8px #888888;
+      cursor: pointer;
+    }
+
+    img:hover {
+      transform: scale(1.1);
+    }
+
+    .detail-wrapper {
+
+      padding: 30px 35px 30px 11px;
+
+      .description {
+        line-height: 2;
+        margin-top: 24px;
+      }
+
+      .online {
+        margin-top: 24px;
+
+        span {
+          display: inline-block;
+          width: 13px;
+          height: 13px;
+          border-radius: 50px;
+          position: relative;
+          top: 2px;
+        }
+
+        .is-online {
+          background-color: green;
+        }
+
+        .not-online {
+          background-color: gray;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
