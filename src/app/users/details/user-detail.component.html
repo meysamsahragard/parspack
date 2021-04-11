@@ -1,26 +1,30 @@
-<a class="back-btn" routerLink="/">
-  <button nz-button nzType="primary"><i nz-icon nzType="left"></i></button>
-</a>
-<div *ngIf="userDetails" class="container">
+<ng-container *ngIf="userDetails; else loading;">
+  <a class="back-btn" routerLink="/">
+    <button nz-button nzType="primary"><i nz-icon nzType="left"></i></button>
+  </a>
+  <div class="content-container">
 
-  <div class="large-img">
+    <div class="large-img">
 
-    <img [src]="largeImgSrc">
-  </div>
-  <div class="small-images-container">
+      <img [src]="largeImgSrc">
+    </div>
+    <div class="small-images-container">
 
-    <img *ngFor="let image of userDetails.images" (click)="setLargeImg(image)" [src]="image">
-    <div class="detail-wrapper">
-      <h1>{{userDetails.title}}</h1>
-      <div class="description">{{userDetails.description}}</div>
+      <img *ngFor="let image of userDetails.images" (click)="setLargeImg(image)" [src]="image">
+      <div class="detail-wrapper">
+        <h1>{{userDetails.title}}</h1>
+        <div class="description">{{userDetails.description}}</div>
 
-      <div class="online">
-        <label>Is Online: </label>
-        <span [ngClass]="userDetails.online ? 'is-online' : 'not-online'"></span>
+        <div class="online">
+          <label>Is Online: </label>
+          <span [ngClass]="userDetails.online ? 'is-online' : 'not-online'"></span>
+        </div>
       </div>
+
     </div>
 
   </div>
-
-</div>
-
+</ng-container>
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

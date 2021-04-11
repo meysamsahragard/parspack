@@ -2,9 +2,9 @@
   margin: 20px 20px 1px;
 }
 
-.container {
+.content-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   padding-top: 30px;
 
   .large-img {

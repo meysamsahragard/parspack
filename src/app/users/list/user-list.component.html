@@ -1,26 +1,16 @@
-<div class="container"  *ngIf="userList$ | async; let userList; else loading">
-  <div>
+<ng-container *ngIf="userList$ | async as userList; else loading;">
+  <header [ngClass]="displayType == 'row' ? 'padding-1' : 'padding-2'">
+
     <h2 class="title">Users List</h2>
-    <nz-pagination [nzPageSize]="pageSize" (nzPageIndexChange)="pageIndexChange($event)" [nzPageIndex]="1"
-                   [nzTotal]="userList.length"
-                   nzSize="small"></nz-pagination>
-  </div>
-  <div class="list-wrapper">
-    <ng-container *ngFor="let user of  userList| slice:start:end; ">
-      <a [routerLink]="['/details', user.id]">
-        <nz-card [nzTitle]="user.title" nzHoverable [nzCover]="coverTemplate">
-          <nz-card-meta [nzDescription]="user.description"></nz-card-meta>
-        </nz-card>
-      </a>
-      <ng-template #coverTemplate>
-        <img alt="example" [src]="user.image"/>
-      </ng-template>
+    <nz-radio-group [(ngModel)]="displayType">
+      <label nz-radio-button nzValue="grid">Grid</label>
+      <label nz-radio-button nzValue="row">Row</label>
+    </nz-radio-group>
 
-    </ng-container>
-
-  </div>
-
-</div>
+  </header>
+  <app-grid-list *ngIf="displayType == 'grid'" [userList]="userList"></app-grid-list>
+  <app-row-list *ngIf="displayType == 'row' " [userList]="userList"></app-row-list>
+</ng-container>
 <ng-template #loading>
-  Loading stuff...
+  <app-loading></app-loading>
 </ng-template>

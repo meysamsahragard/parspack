@@ -9,6 +9,10 @@ import {NzSwitchModule} from 'ng-zorro-antd/switch';
 import {FormsModule} from '@angular/forms';
 import {NzIconModule} from 'ng-zorro-antd/icon';
 import {NzButtonModule} from 'ng-zorro-antd/button';
+import {RowListModule} from './list/row-list/row-list.module';
+import {NzRadioModule} from 'ng-zorro-antd/radio';
+import {LoadingModule} from '../shared/loading.module';
+import {GridListModule} from './list/grid-list/grid-list.module';
 
 @NgModule({
   imports: [
@@ -19,7 +23,11 @@ import {NzButtonModule} from 'ng-zorro-antd/button';
     NzSwitchModule,
     FormsModule,
     NzIconModule,
-    NzButtonModule
+    NzButtonModule,
+    RowListModule,
+    NzRadioModule,
+    LoadingModule,
+    GridListModule
   ],
   declarations: [UserListComponent, UserDetailComponent]
 })

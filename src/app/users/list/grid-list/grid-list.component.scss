@@ -1,0 +1,26 @@
+.grid-container {
+  padding: 1% 3%;
+
+  .list-wrapper {
+    padding: 0 3%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.2rem 1.2rem;
+    clear: both;
+
+    nz-card {
+      width: 300px;
+      margin: auto;
+    }
+  }
+
+  .title {
+    float: left;
+  }
+
+  nz-pagination {
+    margin: 20px auto;
+    width: 283px;
+  }
+}
+
