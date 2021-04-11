@@ -16,5 +16,10 @@ export class GridListComponent {
   pageIndexChange(pageIndex: number) {
     this.start = (pageIndex - 1) * this.pageSize;
     this.end = this.start + 8;
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 }
