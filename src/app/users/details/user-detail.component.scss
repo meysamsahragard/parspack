@@ -65,6 +65,15 @@
 
 }
 
+@media only screen and (max-width: 360px) {
+  .content-container {
+    grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
+  }
+  .detail-wrapper h1 {
+    font-size: 1.3rem;
+  }
+}
+
 
 
 

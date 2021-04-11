@@ -22,3 +22,20 @@ app-row-list {
   padding: 14px;
 }
 
+@media only screen and (max-width: 360px) {
+  app-row-list {
+    width: 85%;
+  }
+  .padding-1 {
+    padding: 0 7%;
+  }
+
+  ::ng-deep .ant-list-item-meta-description {
+    display: inline-block;
+    width: 153px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+  }
+}
+
